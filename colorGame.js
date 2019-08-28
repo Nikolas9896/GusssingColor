@@ -5,8 +5,11 @@ var pickedColor = pickColor();
 var colorDisplay =  document.getElementById("colorDisplay");
 var clickedColor = 0;
 var messageDisplay = document.querySelector("#message");
+var h1 = document.querySelector("h1");
+
 
 colorDisplay.textContent = pickedColor;
+h1.style.backgroundColor = "steelblue";
 
 for(var i = 0; i < squares.length; i++)
 {   //add initial colors to squares
@@ -21,6 +24,7 @@ for(var i = 0; i < squares.length; i++)
         {
             messageDisplay.textContent = "Correct!";
             changeColors(clickedColor);
+            h1.style.backgroundColor = clickedColor;
         }
         else
         {
