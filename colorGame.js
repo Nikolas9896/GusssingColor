@@ -6,7 +6,12 @@ var colorDisplay =  document.getElementById("colorDisplay");
 var clickedColor = 0;
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
+var resetButton = document.getElementById("reset");
 
+
+resetButton.addEventListener("click", function(){
+    alert("I'm New Colors Button!");
+});
 
 colorDisplay.textContent = pickedColor;
 h1.style.backgroundColor = "steelblue";
