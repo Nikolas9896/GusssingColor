@@ -33,8 +33,21 @@ h1  {
 
 .selected {
     background: steelblue;
+    color: white;
 }
 #colorDisplay {
     font-weight: 700;
     font-size: 200%;
+}
+
+button {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size: inherit;
 }
