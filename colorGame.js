@@ -1,7 +1,7 @@
 var numberOfSquares = 6;
 var colors = [];
 var pickedColor;
-var clickedColor = 0;
+var clickedColor;
 var squares = document.querySelectorAll(".square");
 var colorDisplay =  document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
@@ -86,30 +86,41 @@ function reset()
 
 function init()
 {
-        //MODE BUTTONS FOR CHOOSE GAME MODE 3, 6, 9 squares
-    for(var i = 0; i < modeButtons.length; i++)
-    {
-        modeButtons[i].addEventListener("click", function(){
-            modeButtons[0].classList.remove("selected"); //easy button
-            modeButtons[1].classList.remove("selected");//medium button
-            modeButtons[2].classList.remove("selected");//hard button
-            this.classList.add("selected");
-            //check the game mode
-            if(this.textContent === "Easy")
-            {
-                numberOfSquares = 3;
-            }
-            else if(this.textContent === "Medium")
-            {
-                numberOfSquares = 6;
-            }
-            else
-            {
-                numberOfSquares = 9;
-            }
-            reset();
-        });
-    }
+    setupModeButtons();
+    setupSquares();
+    reset();
+}
+
+function setupModeButtons()
+{
+     //MODE BUTTONS FOR CHOOSE GAME MODE 3, 6, 9 squares
+     for(var i = 0; i < modeButtons.length; i++)
+     {
+         modeButtons[i].addEventListener("click", function(){
+             modeButtons[0].classList.remove("selected"); //easy button
+             modeButtons[1].classList.remove("selected");//medium button
+             modeButtons[2].classList.remove("selected");//hard button
+             this.classList.add("selected");
+             //check the game mode
+             if(this.textContent === "Easy")
+             {
+                 numberOfSquares = 3;
+             }
+             else if(this.textContent === "Medium")
+             {
+                 numberOfSquares = 6;
+             }
+             else
+             {
+                 numberOfSquares = 9;
+             }
+             reset();
+         });
+     }
+}
+
+function setupSquares()
+{
     for(var i = 0; i < squares.length; i++)
     { 
     //add click listeners to squares
@@ -131,5 +142,4 @@ function init()
         }
     });
     }
-    reset();
 }
