@@ -57,3 +57,8 @@ button {
     letter-spacing: 1px;
     font-size: inherit;
 }
+
+button:hover {
+    color: white;
+    background: steelblue;
+}
