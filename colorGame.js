@@ -12,11 +12,16 @@ var resetButton = document.getElementById("reset");
 var easyBtn = document.getElementById("easyBtn");
 var mediumBtn = document.getElementById("mediumBtn");
 var hardBtn = document.getElementById("hardBtn");
+
+//START GAME IN MEDIUM MODE 6 Squares
 squares[6].style.display = "none";
 squares[7].style.display = "none";
 squares[8].style.display = "none";
 mediumBtn.classList.add("selected");
+colorDisplay.textContent = pickedColor;
+h1.style.backgroundColor = "steelblue";
 
+//EASY MODE BUTTON 3 Squares
 easyBtn.addEventListener("click", function(){
     easyBtn.classList.add("selected");
     mediumBtn.classList.remove("selected");
@@ -25,6 +30,7 @@ easyBtn.addEventListener("click", function(){
     colors = generateRandomColors(numberOfSquares);
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
+    h1.style.backgroundColor = "steelblue";
     for( var i = 0; i < squares.length; i++)
     {
         if(colors[i])
@@ -37,6 +43,8 @@ easyBtn.addEventListener("click", function(){
         }
     }
 });
+
+//MEDIUM MODE BUTTON 6 Squares
 mediumBtn.addEventListener("click", function(){
     mediumBtn.classList.add("selected");
     easyBtn.classList.remove("selected");
@@ -46,6 +54,7 @@ mediumBtn.addEventListener("click", function(){
     colors = generateRandomColors(numberOfSquares);
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
+    h1.style.backgroundColor = "steelblue";
     for( var i = 0; i < squares.length; i++)
     {
         if(colors[i])
@@ -59,6 +68,7 @@ mediumBtn.addEventListener("click", function(){
         }
     }
 });
+//HARD MODE BUTTON  9 Squares
 hardBtn.addEventListener("click", function(){
     hardBtn.classList.add("selected");
     mediumBtn.classList.remove("selected");
@@ -67,6 +77,7 @@ hardBtn.addEventListener("click", function(){
     colors = generateRandomColors(numberOfSquares);
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
+    h1.style.backgroundColor = "steelblue";
     for( var i = 0; i < squares.length; i++)
     {
         squares[i].style.backgroundColor = colors[i];
@@ -75,9 +86,9 @@ hardBtn.addEventListener("click", function(){
     }
 });
 
-colorDisplay.textContent = pickedColor;
-h1.style.backgroundColor = "steelblue";
 
+
+//NEW COLORS OR PLAY AGAIN? BUTTON
 resetButton.addEventListener("click", function(){
     //change h1 to default color
     h1.style.backgroundColor = "steelblue";
@@ -95,9 +106,6 @@ resetButton.addEventListener("click", function(){
         squares[i].style.backgroundColor = colors[i];
     }
 });
-
-colorDisplay.textContent = pickedColor;
-h1.style.backgroundColor = "steelblue";
 
 for(var i = 0; i < squares.length; i++)
 {   //add initial colors to squares
