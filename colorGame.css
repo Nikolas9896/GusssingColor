@@ -9,6 +9,10 @@ body {
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
+    border-radius: 15%;
+    transition: background 0.7s;
+    -webkit-transition: background 0.7s;
+    -moz-transition: background 0.7s;
 }
 
 #container {
@@ -56,6 +60,9 @@ button {
     color: steelblue;
     letter-spacing: 1px;
     font-size: inherit;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
 }
 
 button:hover {
